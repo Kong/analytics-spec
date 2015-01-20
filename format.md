@@ -25,7 +25,7 @@ This object represents the root of the JSON message. The object contains the fol
 | ------------------- | -------- | ---------- | ------------------------------------------------------------------------------------------------------------- |
 | **`serviceToken`**  | `String` | `required` | Version number of the format *(currently 1.2)*                                                                |
 | **`version`**       | `String` | `required` | obtain yours by registering for a free trial at `APIAnalytics.com`(http://apianalytics.com)                   |
-| **`creator`**       | `Object` | `required` | An object of type `creator`(#creator) that contains the name and version information of the log creator agent |
+| **`creator`**       | `Object` | `required` | An object of type [creator](#creator) that contains the name and version information of the log creator agent |
 | **`entries`**       | `Array`  | `required` | An array of objects of type `entry`(#entry), each representing one exported (tracked) HTTP request.           |
 
 ### creator
@@ -64,9 +64,9 @@ This object represents an array with all exported HTTP requests.
 | Name                  | Type      | Required   | Description                                                                                                                                                  |
 | --------------------- | --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **`time`**            | `Nnumber` | `required` | Total elapsed time of the request in milliseconds. This is the sum of all timings available in the `timings`(#timings) object (i.e. not including `-1` values) |
-| **`request`**         | `Object`  | `required` | An object of type `request`(#request) that contains info about the request                                                                                   |
-| **`response`**        | `Object`  | `required` | An object of type `response`(#response) that contains info about the response                                                                                |
-| **`timings`**         | `Object`  | `required` | An object of type `timings`(#timings) that contains timing info about request/response round trip                                                            |
+| **`request`**         | `Object`  | `required` | An object of type [request](#request) that contains info about the request                                                                                   |
+| **`response`**        | `Object`  | `required` | An object of type [response](#response) that contains info about the response                                                                                |
+| **`timings`**         | `Object`  | `required` | An object of type [timings](#timings) that contains timing info about request/response round trip                                                            |
 | **`serverIPAddress`** | `String`  | `optional` | IP address of the server                                                                                                                                     |
 | **`clientIPAddress`** | `String`  | `optional` | IP address of the client                                                                                                                                     |
 
@@ -95,7 +95,7 @@ This object contains detailed info about performed request.
 | **`queryString`** | `Array`   | `required` | List of query parameter objects                                                                                                                                  |
 | **`headers`**     | `Array`   | `required` | List of header objects                                                                                                                                           |
 | **`headersSize`** | `Number`  | `required` | Total number of bytes from the start of the HTTP request message until (and including) the double CRLF before the body. Set to `-1` if the info is not available |
-| **`content`**     | `Number`  | `optional` | An object of type `content`(#content) that contain info about the request body                                                                                   |
+| **`content`**     | `Number`  | `optional` | An object of type [content](#content) that contain info about the request body                                                                                   |
 | **`bodySize`**    | `Number`  | `required` | Size of the request body (POST data payload) in bytes. Set to `-1` if the info is not available                                                                  |
 
 ### response
@@ -121,7 +121,7 @@ This object contains detailed info about the response.
 | **`httpVersion`** | `String`  | `required` | Response HTTP Version                                                                                                                                              |
 | **`headers`**     | `Array`   | `required` | List of header objects                                                                                                                                             |
 | **`headersSize`** | `Number`  | `required` | Total number of bytes from the start of the HTTP response message until (and including) the double CRLF before the body. Set to `-1` if the info is not available  |
-| **`content`**     | `Object`  | `optional` | An object of type `content`(#content) that contain info about the response body                                                                                    |
+| **`content`**     | `Object`  | `optional` | An object of type [content](#content) that contain info about the response body                                                                                    |
 | **`bodySize`**    | `Number`  | `required` | Size of the received response body in bytes. Set to zero in case of responses coming from the cache (304). Set to `-1` if the info is not available                |
 
 
