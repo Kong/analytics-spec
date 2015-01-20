@@ -52,6 +52,7 @@ This object represents an array with all exported HTTP requests.
 "entries": [
   {
     "serverIPAddress": "10.10.10.10",
+    "clientIPAddress": "10.10.10.20",
     "startedDateTime": "2015-01-20T18:22:09.052",
     "time": 50,
     "request": {...},
@@ -63,13 +64,13 @@ This object represents an array with all exported HTTP requests.
 
 | Name                  | Type      | Required   | Description                                                                                                                                                    |
 | --------------------- | --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`serverIPAddress`** | `String`  | `optional` | IP address of the server                                                                                                                                       |
+| **`clientIPAddress`** | `String`  | `optional` | IP address of the client                                                                                                                                       |
+| **`startedDateTime`** | `String`  | `required` | Date and time stamp for the beginning of the request (ISO 8601 - YYYY-MM-DDThh:mm:ss.sTZD)                                                                     |
 | **`time`**            | `Nnumber` | `required` | Total elapsed time of the request in milliseconds. This is the sum of all timings available in the `timings`(#timings) object (i.e. not including `-1` values) |
 | **`request`**         | `Object`  | `required` | An object of type [`request`](#request) that contains info about the request                                                                                   |
 | **`response`**        | `Object`  | `required` | An object of type [`response`](#response) that contains info about the response                                                                                |
 | **`timings`**         | `Object`  | `required` | An object of type [`timings`](#timings) that contains timing info about request/response round trip                                                            |
-| **`startedDateTime`** | `String`  | `required` | Date and time stamp for the beginning of the request (ISO 8601 - YYYY-MM-DDThh:mm:ss.sTZD)                                                                     |
-| **`serverIPAddress`** | `String`  | `optional` | IP address of the server                                                                                                                                       |
-| **`clientIPAddress`** | `String`  | `optional` | IP address of the client                                                                                                                                       |
 
 ### request
 
