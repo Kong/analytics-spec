@@ -97,7 +97,7 @@ This object contains detailed info about performed request.
 | **`queryString`** | `Array`   | `required` | List of query parameter objects                                                                                                                                  |
 | **`headers`**     | `Array`   | `required` | List of header objects                                                                                                                                           |
 | **`headersSize`** | `Number`  | `required` | Total number of bytes from the start of the HTTP request message until (and including) the double CRLF before the body. Set to `-1` if the info is not available |
-| **`content`**     | `Number`  | `optional` | An object of type [`content`](#content) that contain info about the request body                                                                                   |
+| **`content`**     | `Object`  | `optional` | An object of type [`content`](#content) that contain info about the request body                                                                                   |
 | **`bodySize`**    | `Number`  | `required` | Size of the request body (POST data payload) in bytes. Set to `-1` if the info is not available                                                                  |
 
 ### response
@@ -206,7 +206,7 @@ This object describes various phases within request-response round trip. All tim
 | **`dns`**     | `Number` | `optional` | DNS resolution time. The time required to resolve a host name. Use `-1` if the timing does not apply to the current request     |
 | **`connect`** | `Number` | `optional` | Time required to create TCP connection. Use `-1` if the timing does not apply to the current request                            |
 | **`send`**    | `Number` | `required` | Time required to send HTTP request to the server                                                                                |
-| **`wait`**    | `Number` | `reqiored` | Waiting for a response from the server                                                                                          |
+| **`wait`**    | `Number` | `required` | Waiting for a response from the server                                                                                          |
 | **`receive`** | `Number` | `required` | Time required to read entire response from the server (or cache)                                                                |
 | **`ssl`**     | `Number` | `optional` | Time required for SSL/TLS negotiation. Use `-1` if the timing does not apply to the current request                             |
 
