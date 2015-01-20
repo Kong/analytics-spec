@@ -23,17 +23,17 @@ The ApiAnalytics.com platform supports 3 different protocols: Socket.io, ZMQ and
 
 ### Socket.io
 
-Open a connection to `socket.apianalytics.com`, port `80`. Emit [HAR+ JSON object](format) on the channel `message`.
+Open a connection to `socket.apianalytics.com`, port `80`. Emit [HAR+ JSON object](format.md) on the channel `message`.
 
 ```js
 var io = require('socket.io-client');
-var socket = io('ws://socket.apianalytics.com:4000');
+var socket = io('ws://socket.apianalytics.com');
 socket.send(harObject);
 ```
 
 ### ZMQ
 
-Open a connection to `socket.apianalytics.com`, port `5000`, in `push` mode. Send a string representation of the [HAR+ object](format).
+Open a connection to `socket.apianalytics.com`, port `5000`, in `push` mode. Send a string representation of the [HAR+ object](format.md).
 
 ```js
 var zmq = require('zmq');
@@ -44,7 +44,7 @@ socket.send(JSON.stringify(harObject));
 
 ### HTTP
 
-Send HTTP `POST` requests to `socket.apianalytics.com/`, port `6000`. The body must be a valid [HAR+ object](format).
+Send HTTP `POST` requests to `socket.apianalytics.com/`, port `6000`. The body must be a valid [HAR+ object](format.md).
 
 Alternatively, it's possible to send an array of HAR objects at `socket.apianalytics.com/batch`, port `6000`.
 
