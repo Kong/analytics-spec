@@ -32,7 +32,7 @@ This object represents the root of the JSON message. The object contains the fol
 
 This object contains information about the log creator agent and contains the following name/value pairs:
 
-```json
+```js
 "creator": {
   "name": "My HAR client",
   "version": "1.0"
@@ -48,7 +48,7 @@ This object contains information about the log creator agent and contains the fo
 
 This object represents an array with all exported HTTP requests.
 
-```json
+```js
 "entries": [
   {
     "serverIPAddress": "10.10.10.10",
@@ -76,7 +76,7 @@ This object represents an array with all exported HTTP requests.
 
 This object contains detailed info about performed request.
 
-```json
+```js
 "request": {
   "method": "GET",
   "url": "http://api.domain.com/path/",
@@ -104,7 +104,7 @@ This object contains detailed info about performed request.
 
 This object contains detailed info about the response.
 
-```json
+```js
 "response": {
     "status": 200,
     "statusText": "OK",
@@ -131,7 +131,7 @@ This object contains detailed info about the response.
 
 This object contains list of all headers *(used in `request](#request) and [response`(#response) objects)*.
 
-```json
+```js
 "headers": [
   {
     "name": "Accept-Encoding",
@@ -148,7 +148,7 @@ This object contains list of all headers *(used in `request](#request) and [resp
 
 This object contains list of all parameters & values parsed from a query string, if any *(embedded in `request`(#request) object)*.
 
-```json
+```js
 "queryString": [
   {
     "name": "param1",
@@ -165,7 +165,7 @@ This object contains list of all parameters & values parsed from a query string,
 
 This object describes details about response content *(used in `request](#request) and [response`(#response) objects)*.
 
-```json
+```js
 "content": {
   "size": 33,
   "compression": 0,
@@ -187,7 +187,7 @@ This object describes details about response content *(used in `request](#reques
 
 This object describes various phases within request-response round trip. All times are specified in milliseconds.
 
-```json
+```js
 "timings": {
   "blocked": 0,
   "dns": -1,
@@ -222,7 +222,7 @@ entry.time == entry.timings.blocked + entry.timings.dns +
 
 ###### Full Example
 
-```json
+```js
 {
   "serviceToken": "<my service token>",
   "version": "1.2",
