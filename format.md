@@ -45,10 +45,10 @@ This object represents the root of the JSON message. The object contains the fol
 }
 ```
 
-| Name                | Type     | Required   | Description                                                                                                   |
-| ------------------- | -------- | ---------- | ------------------------------------------------------------------------------------------------------------- |
-| **`serviceToken`**  | `String` | `required` | Version number of the format *(currently 1.2)*                                                                |
-| **`version`**       | `String` | `required` | obtain yours by registering for a free trial at `APIAnalytics.com`(http://apianalytics.com)                   |
+| Name                | Type     | Required   | Description                                                                                                     |
+| ------------------- | -------- | ---------- | --------------------------------------------------------------------------------------------------------------- |
+| **`serviceToken`**  | `String` | `required` | Version number of the format *(currently 1.2)*                                                                  |
+| **`version`**       | `String` | `required` | obtain yours by registering for a free trial at `APIAnalytics.com`(http://apianalytics.com)                     |
 | **`creator`**       | `Object` | `required` | An object of type [`creator`](#creator) that contains the name and version information of the log creator agent |
 | **`entries`**       | `Array`  | `required` | An array of objects of type [`entry`](#entry), each representing one exported (tracked) HTTP request.           |
 
@@ -86,15 +86,15 @@ This object represents an array with all exported HTTP requests.
 ]
 ```
 
-| Name                  | Type      | Required   | Description                                                                                                                                                    |
-| --------------------- | --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`serverIPAddress`** | `String`  | `optional` | IP address of the server                                                                                                                                       |
-| **`clientIPAddress`** | `String`  | `optional` | IP address of the client                                                                                                                                       |
-| **`startedDateTime`** | `String`  | `required` | Date and time stamp for the beginning of the request (ISO 8601 - YYYY-MM-DDThh:mm:ss.sTZD)                                                                     |
-| **`time`**            | `Nnumber` | `required` | Total elapsed time of the request in milliseconds. This is the sum of all timings available in the `timings`(#timings) object (i.e. not including `-1` values) |
-| **`request`**         | `Object`  | `required` | An object of type [`request`](#request) that contains info about the request                                                                                   |
-| **`response`**        | `Object`  | `required` | An object of type [`response`](#response) that contains info about the response                                                                                |
-| **`timings`**         | `Object`  | `required` | An object of type [`timings`](#timings) that contains timing info about request/response round trip                                                            |
+| Name                  | Type      | Required   | Description                                                                                                                     |
+| --------------------- | --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **`serverIPAddress`** | `String`  | `optional` | IP address of the server                                                                                                        |
+| **`clientIPAddress`** | `String`  | `optional` | IP address of the client                                                                                                        |
+| **`startedDateTime`** | `String`  | `required` | Date and time stamp for the beginning of the request (ISO 8601 - YYYY-MM-DDThh:mm:ss.sTZD)                                      |
+| **`time`**            | `Nnumber` | `required` | Total elapsed time of the request in milliseconds. This is the sum of all timings available in the [`timings`](#timings) object |
+| **`request`**         | `Object`  | `required` | An object of type [`request`](#request) that contains info about the request                                                    |
+| **`response`**        | `Object`  | `required` | An object of type [`response`](#response) that contains info about the response                                                 |
+| **`timings`**         | `Object`  | `required` | An object of type [`timings`](#timings) that contains timing info about request/response round trip                             |
 
 ### request
 
@@ -113,16 +113,16 @@ This object contains detailed info about performed request.
 }
 ```
 
-| Name              | Type      | Required   | Description                                                                                                                                                      |
-| ----------------- | --------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`method`**      | `String`  | `required` | Request method                                                                                                                                                   |
-| **`url`**         | `String`  | `required` | Absolute URL of the request                                                                                                                                      |
-| **`httpVersion`** | `String`  | `required` | Request HTTP Version                                                                                                                                             |
-| **`queryString`** | `Array`   | `required` | List of query parameter objects                                                                                                                                  |
-| **`headers`**     | `Array`   | `required` | List of header objects                                                                                                                                           |
-| **`headersSize`** | `Number`  | `required` | Total number of bytes from the start of the HTTP request message until (and including) the double CRLF before the body. Set to `-1` if the info is not available |
-| **`content`**     | `Object`  | `optional` | An object of type [`content`](#content) that contain info about the request body                                                                                   |
-| **`bodySize`**    | `Number`  | `required` | Size of the request body (POST data payload) in bytes. Set to `-1` if the info is not available                                                                  |
+| Name              | Type      | Required   | Description                                                                                                             |
+| ----------------- | --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **`method`**      | `String`  | `required` | Request method                                                                                                          |
+| **`url`**         | `String`  | `required` | Absolute URL of the request                                                                                             |
+| **`httpVersion`** | `String`  | `required` | Request HTTP Version                                                                                                    |
+| **`queryString`** | `Array`   | `required` | List of query parameter objects                                                                                         |
+| **`headers`**     | `Array`   | `required` | List of header objects                                                                                                  |
+| **`headersSize`** | `Number`  | `required` | Total number of bytes from the start of the HTTP request message until (and including) the double CRLF before the body. |
+| **`content`**     | `Object`  | `optional` | An object of type [`content`](#content) that contain info about the request body                                        |
+| **`bodySize`**    | `Number`  | `optional` | Size of the request body (POST data payload) in bytes.                                                                  |
 
 ### response
 
@@ -140,15 +140,15 @@ This object contains detailed info about the response.
 }
 ```
 
-| Name              | Type      | Required   | Description                                                                                                                                                        |
-| ----------------- | --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`status`**      | `Number`  | `required` | Response status                                                                                                                                                    |
-| **`statusText`**  | `String`  | `required` | Response status description                                                                                                                                        |
-| **`httpVersion`** | `String`  | `required` | Response HTTP Version                                                                                                                                              |
-| **`headers`**     | `Array`   | `required` | List of header objects                                                                                                                                             |
-| **`headersSize`** | `Number`  | `required` | Total number of bytes from the start of the HTTP response message until (and including) the double CRLF before the body. Set to `-1` if the info is not available  |
-| **`content`**     | `Object`  | `optional` | An object of type [`content`](#content) that contain info about the response body                                                                                    |
-| **`bodySize`**    | `Number`  | `required` | Size of the received response body in bytes. Set to zero in case of responses coming from the cache (304). Set to `-1` if the info is not available                |
+| Name              | Type      | Required   | Description                                                                                                                  |
+| ----------------- | --------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **`status`**      | `Number`  | `required` | Response status                                                                                                              |
+| **`statusText`**  | `String`  | `required` | Response status description                                                                                                  |
+| **`httpVersion`** | `String`  | `required` | Response HTTP Version                                                                                                        |
+| **`headers`**     | `Array`   | `required` | List of header objects                                                                                                       |
+| **`headersSize`** | `Number`  | `required` | Total number of bytes from the start of the HTTP response message until (and including) the double CRLF before the body.     |
+| **`content`**     | `Object`  | `optional` | An object of type [`content`](#content) that contain info about the response body                                            |
+| **`bodySize`**    | `Number`  | `required` | Size of the received response body in bytes. Set to zero in case of responses coming from the cache (304) or no body is sent |
 
 
 ### headers
@@ -214,29 +214,29 @@ This object describes various phases within request-response round trip. All tim
 ```js
 "timings": {
   "blocked": 0,
-  "dns": -1,
+  "dns": 0,
   "connect": 15,
   "send": 20,
   "wait": 38,
   "receive": 12,
-  "ssl": -1,
+  "ssl": 0,
   "comment": ""
 }
 ```
 
-| Name          | Type     | Required   | Description                                                                                                                     |
-| ------------- | -------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **`blocked`** | `Number` | `optional` | Time spent in a queue waiting for a network connection. Use `-1` if the timing does not apply to the current request            |
-| **`dns`**     | `Number` | `optional` | DNS resolution time. The time required to resolve a host name. Use `-1` if the timing does not apply to the current request     |
-| **`connect`** | `Number` | `optional` | Time required to create TCP connection. Use `-1` if the timing does not apply to the current request                            |
-| **`send`**    | `Number` | `required` | Time required to send HTTP request to the server                                                                                |
-| **`wait`**    | `Number` | `required` | Waiting for a response from the server                                                                                          |
-| **`receive`** | `Number` | `required` | Time required to read entire response from the server (or cache)                                                                |
-| **`ssl`**     | `Number` | `optional` | Time required for SSL/TLS negotiation. Use `-1` if the timing does not apply to the current request                             |
+| Name          | Type     | Required   | Description                                                       |
+| ------------- | -------- | ---------- | ----------------------------------------------------------------- |
+| **`blocked`** | `Number` | `optional` | Time spent in a queue waiting for a network connection.           |
+| **`dns`**     | `Number` | `optional` | DNS resolution time. The time required to resolve a host name.    |
+| **`connect`** | `Number` | `optional` | Time required to create TCP connection.                           |
+| **`send`**    | `Number` | `required` | Time required to send HTTP request to the server                  |
+| **`wait`**    | `Number` | `required` | Waiting for a response from the server                            |
+| **`receive`** | `Number` | `required` | Time required to read entire response from the server (or cache)  |
+| **`ssl`**     | `Number` | `optional` | Time required for SSL/TLS negotiation.                            |
 
-*The `time` value for the [request object](#request) must be equal to the sum of the timings supplied in this section (excluding any -1 values).*
+*The `time` value for the [request object](#request) must be equal to the sum of the timings supplied in this section.*
 
-Following must be true in case there are no `-1` values:
+Following must always be true:
 
 ```js
 entry.time == entry.timings.blocked + entry.timings.dns +
@@ -298,12 +298,12 @@ entry.time == entry.timings.blocked + entry.timings.dns +
     },
     "timings": {
       "blocked": 0,
-      "dns": -1,
+      "dns": 0,
       "connect": 15,
       "send": 20,
       "wait": 38,
       "receive": 12,
-      "ssl": -1,
+      "ssl": 0,
     }
   }]
 }
