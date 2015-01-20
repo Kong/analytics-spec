@@ -4,7 +4,8 @@ This specification documents the public interface to log data points into [apian
 
 **This document is authoritative**: other copies of this information must follow the standard to ensure compatibility.
 
-The server accepts a slightly customized version of the [HAR *(HTTP Archive Format)* standard.](http://www.softwareishard.com/blog/har-12-spec/) It supports the Socket.io, ZMQ and HTTP protocols, see [HAR+ Format](format.md) for more details on the modified standard.
+API Analytics uses a custom logging format that incorporates [**HAR**](http://www.softwareishard.com/blog/har-12-spec/) *(HTTP Archive Format)* for HTTP logging.
+It supports the Socket.io, ZMQ and HTTP protocols, see [API Log Format](format.md) for more details on the modified standard.
 
 ## Official Clients
 
@@ -23,7 +24,7 @@ The ApiAnalytics.com platform supports 3 different protocols: Socket.io, ZMQ and
 
 ### Socket.io
 
-Open a connection to `socket.apianalytics.com`, port `80`. Emit [HAR+ JSON object](format.md) on the channel `message`.
+Open a connection to `socket.apianalytics.com`, port `80`. Emit [API Log Format](format.md) object on the channel `message`.
 
 ```js
 var io = require('socket.io-client');
@@ -33,7 +34,7 @@ socket.send(harObject);
 
 ### ZMQ
 
-Open a connection to `socket.apianalytics.com`, port `5000`, in `push` mode. Send a string representation of the [HAR+ object](format.md).
+Open a connection to `socket.apianalytics.com`, port `5000`, in `push` mode. Send a string representation of the [API Log Format](format.md) object.
 
 ```js
 var zmq = require('zmq');
@@ -44,8 +45,8 @@ socket.send(JSON.stringify(harObject));
 
 ### HTTP
 
-Send HTTP `POST` requests to `socket.apianalytics.com/`, port `6000`. The body must be a valid [HAR+ object](format.md).
+Send HTTP `POST` requests to `socket.apianalytics.com/`, port `6000`. The body must be a valid [API Log Format](format.md) object.
 
-Alternatively, it's possible to send an array of HAR objects at `socket.apianalytics.com/batch`, port `6000`.
+Alternatively, it's possible to send an array of API Log Format objects at `socket.apianalytics.com/batch`, port `6000`.
 
 **Note:** The payload (body) per HTTP request must not exceed 1MB.
