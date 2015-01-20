@@ -310,7 +310,6 @@ entry.time == entry.timings.blocked + entry.timings.dns +
           },
           "bodySize": 11,
           "headersSize": 41,
-          "redirectUrl": ""
         },
         "timings": {
           "blocked": 0,
