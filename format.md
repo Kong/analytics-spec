@@ -6,6 +6,30 @@
 
 A HAR+ Message is REQUIRED to be saved in `UTF-8` encoding. Other encodings are forbidden.
 
+### Differences from HAR
+
+Due to the nature of HAR originating as a browser based format, some elements are not applicable and have been removed from the HAR+ spec:
+
+- `log`
+  - `browser`
+  - `pages`
+- `entry`
+  - `pageref`
+  - `cache`
+  - `connection`
+  - `request`
+    - `redirectURL`
+    - `cookies`
+    - `postData`
+
+*(in addition to the above list all `comment` properties on all objects are removed.)*
+
+We also added some properties that we felt were missing, or were needed for API Analytics usage:
+
++ [`serviceToken`](#message)
++ [`entry.clientIPAddress`](#entry)
++ [`request.content`](#request)
+
 ## List of objects
 
 ### message
@@ -26,7 +50,7 @@ This object represents the root of the JSON message. The object contains the fol
 | **`serviceToken`**  | `String` | `required` | Version number of the format *(currently 1.2)*                                                                |
 | **`version`**       | `String` | `required` | obtain yours by registering for a free trial at `APIAnalytics.com`(http://apianalytics.com)                   |
 | **`creator`**       | `Object` | `required` | An object of type [`creator`](#creator) that contains the name and version information of the log creator agent |
-| **`entries`**       | `Array`  | `required` | An array of objects of type `entry`(#entry), each representing one exported (tracked) HTTP request.           |
+| **`entries`**       | `Array`  | `required` | An array of objects of type [`entry`](#entry), each representing one exported (tracked) HTTP request.           |
 
 ### creator
 
@@ -44,7 +68,7 @@ This object contains information about the log creator agent and contains the fo
 | **`name`**    | `String` | `required` | The name of the agent that created the log.           |
 | **`version`** | `String` | `required` | The version number of the agent that created the log. |
 
-### entries
+### entry
 
 This object represents an array with all exported HTTP requests.
 
