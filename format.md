@@ -51,9 +51,9 @@ This object represents an array with all exported HTTP requests.
 ```js
 "entries": [
   {
+    "startedDateTime": "2015-01-20T18:22:09.052",
     "serverIPAddress": "10.10.10.10",
     "clientIPAddress": "10.10.10.20",
-    "startedDateTime": "2015-01-20T18:22:09.052",
     "time": 50,
     "request": {...},
     "response": {...},
@@ -106,14 +106,14 @@ This object contains detailed info about the response.
 
 ```js
 "response": {
-    "status": 200,
-    "statusText": "OK",
-    "httpVersion": "HTTP/1.1",
-    "headers": `...`,
-    "headersSize" : 160,
-    "content": {...},
-    "bodySize" : 850,
- }
+  "status": 200,
+  "statusText": "OK",
+  "httpVersion": "HTTP/1.1",
+  "headers": `...`,
+  "headersSize" : 160,
+  "content": {...},
+  "bodySize" : 850,
+}
 ```
 
 | Name              | Type      | Required   | Description                                                                                                                                                        |
@@ -231,8 +231,10 @@ entry.time == entry.timings.blocked + entry.timings.dns +
     "version": "1.0"
   },
   "entries": [{
-    "serverIPAddress": "10.10.10.10",
     "startedDateTime": "2015-01-20T18:22:09.052",
+    "serverIPAddress": "10.10.10.10",
+    "clientIPAddress": "10.10.10.20",
+    "time": 50
     "request": {
       "method": "POST",
       "url": "http://api.domain.com/path/",
