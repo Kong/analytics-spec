@@ -47,8 +47,8 @@ This object represents the root of the JSON message. The object contains the fol
 
 | Name                | Type     | Required   | Description                                                                                                     |
 | ------------------- | -------- | ---------- | --------------------------------------------------------------------------------------------------------------- |
-| **`serviceToken`**  | `String` | `required` | Version number of the format *(currently 1.2)*                                                                  |
-| **`version`**       | `String` | `required` | obtain yours by registering for a free trial at `APIAnalytics.com`(http://apianalytics.com)                     |
+| **`serviceToken`**  | `String` | `required` | obtain yours by registering for a free trial at `APIAnalytics.com`(http://apianalytics.com)                     |
+| **`version`**       | `String` | `required` | Version number of the format *(currently 1.2)*                                                                  |
 | **`creator`**       | `Object` | `required` | An object of type [`creator`](#creator) that contains the name and version information of the log creator agent |
 | **`entries`**       | `Array`  | `required` | An array of objects of type [`entry`](#entry), each representing one exported (tracked) HTTP request.           |
 
