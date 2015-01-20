@@ -201,7 +201,7 @@ This object describes details about response content *(used in `request](#reques
 
 | Name              | Type      | Required   | Description                                                                                                                                                                       |
 | ----------------- | --------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`size`**        | `Number`  | `required` | Length of the returned content in bytes. *Should be equal to `response.bodySize` / `request.bodySize` if there is no compression and bigger when the content has been compressed* |
+| **`size`**        | `Number`  | `required` | Length of the returned content in bytes. *Should be equal to `[request|response].bodySize` if there is no compression and bigger when the content has been compressed* |
 | **`compression`** | `Number`  | `optional` | Number of bytes saved. Leave out if info is not available                                                                                                                         |
 | **`mimeType`**    | `String`  | `required` | MIME type of the text field. The charset attribute of the MIME type is included (if available)                                                                                    |
 | **`encoding`**    | `String`  | `optional` | Encoding used for the text field e.g `base64`. Leave out this field if the text field is HTTP decoded (decompressed & unchunked)                                                  |
@@ -220,7 +220,6 @@ This object describes various phases within request-response round trip. All tim
   "wait": 38,
   "receive": 12,
   "ssl": 0,
-  "comment": ""
 }
 ```
 

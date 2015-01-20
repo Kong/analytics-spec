@@ -4,7 +4,7 @@ This specification documents the public interface to log data points into [apian
 
 **This document is authoritative**: other copies of this information must follow the standard to ensure compatibility.
 
-The server accepts only accepts a slightly customized version of the [HAR *(HTTP Archive Format)* standard.](http://www.softwareishard.com/blog/har-12-spec/) It supports the Socket.io, ZMQ and HTTP protocols, see [HAR+ Format](format.md) for more details on the modified standard.
+The server accepts a slightly customized version of the [HAR *(HTTP Archive Format)* standard.](http://www.softwareishard.com/blog/har-12-spec/) It supports the Socket.io, ZMQ and HTTP protocols, see [HAR+ Format](format.md) for more details on the modified standard.
 
 ## Official Clients
 
