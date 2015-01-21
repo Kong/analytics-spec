@@ -132,7 +132,7 @@ This object contains detailed info about performed request.
 | **`method`**      | `String`  | `required` | Request method                                                                                                          |
 | **`url`**         | `String`  | `required` | Absolute URL of the request                                                                                             |
 | **`httpVersion`** | `String`  | `required` | Request HTTP Version                                                                                                    |
-| **`queryString`** | `Array`   | `required` | List of query parameter objects                                                                                         |
+| **`queryString`** | `Array`   | `optional` | List of query parameter objects                                                                                         |
 | **`headers`**     | `Array`   | `required` | List of header objects                                                                                                  |
 | **`headersSize`** | `Number`  | `required` | Total number of bytes from the start of the HTTP request message until (and including) the double CRLF before the body  |
 | **`content`**     | `Object`  | `optional` | An object of type [`content`](#content) that contain info about the request body                                        |
@@ -162,7 +162,7 @@ This object contains detailed info about the response.
 | **`headers`**     | `Array`   | `required` | List of header objects                                                                                                       |
 | **`headersSize`** | `Number`  | `required` | Total number of bytes from the start of the HTTP response message until (and including) the double CRLF before the body      |
 | **`content`**     | `Object`  | `optional` | An object of type [`content`](#content) that contain info about the response body                                            |
-| **`bodySize`**    | `Number`  | `required` | Size of the received response body in bytes. Set to zero in case of responses coming from the cache (304) or no body is sent |
+| **`bodySize`**    | `Number`  | `optional` | Size of the received response body in bytes. Set to zero in case of responses coming from the cache (304) or no body is sent |
 
 
 ### headers
