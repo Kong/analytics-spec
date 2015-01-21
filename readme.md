@@ -9,8 +9,8 @@ It supports the Socket.io, ZMQ and HTTP protocols, see [API Log Format](format.m
 
 ## Official Clients
 
-- [Node.js Agent](https://github.com/Mashape/analytics-agents)
-- [HARchiver](https://github.com/Mashape/harchiver) *(Universal lightweight proxy)*
+- [Node.js Agent](https://github.com/APIAnalytics/node-agent)
+- [HARchiver](https://github.com/APIAnalytics/HARchiver) *(Universal lightweight proxy)*
 
 ## Communicating with the server
 
