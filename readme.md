@@ -10,7 +10,9 @@ It supports the Socket.io, ZMQ and HTTP protocols, see [API Log Format](format.m
 ## Official Clients
 
 - [Node.js Agent](https://github.com/APIAnalytics/node-agent)
-- [HARchiver](https://github.com/APIAnalytics/HARchiver) *(Universal lightweight proxy)*
+  - *NodeJS middleware, compatible with HTTP, Express, Restify, etc ...*
+- [HARchiver](https://github.com/APIAnalytics/HARchiver)
+  - *Universal lightweight proxy*
 
 ## Communicating with the server
 
