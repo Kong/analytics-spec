@@ -201,7 +201,7 @@ This object contains list of all parameters & values parsed from a query string,
 
 ### content
 
-This object describes details about response content *(used in `request](#request) and [response`(#response) objects)*.
+This object describes details about response content *(used in [request](#request) and [response](#response) objects)*.
 
 ```js
 "content": {
@@ -219,7 +219,9 @@ This object describes details about response content *(used in `request](#reques
 | **`compression`** | `Number`  | `optional` | Number of bytes saved. Leave out if info is not available                                                                                                                         |
 | **`mimeType`**    | `String`  | `required` | MIME type of the text field. The charset attribute of the MIME type is included (if available)                                                                                    |
 | **`encoding`**    | `String`  | `optional` | Encoding used for the text field e.g `base64`. Leave out this field if the text field is HTTP decoded (decompressed & unchunked)                                                  |
-| **`text`**        | `String`  | `optional` | Response body sent. populated with textual content only. Leave out if info is not available                                                                                       |
+| **`text`**        | `String`  | `optional` | The body encoded using the format declared in `encoding`. Leave out if info is not available                                                                                       |
+
+Note: you should still construct and send `content` object even if not adding the `text` property.
 
 ### timings
 
