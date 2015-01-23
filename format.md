@@ -1,8 +1,8 @@
 # Format
 
-API Analytics uses a new HTTP logging format based on [HAR](http://www.softwareishard.com/blog/har-12-spec/) *(HTTP Archive Format)* called ALF *(API Log Format)*. 
+API Analytics uses a new HTTP logging format based on [**HAR**](http://www.softwareishard.com/blog/har-12-spec/) *(HTTP Archive Format)* called **ALF** *(API Log Format)*. 
 
-Read the spec below or skip to the [full json example](https://github.com/APIAnalytics/spec/blob/master/format.md#full-example).
+Read the spec below or [skip to the full json example](#full-example).
 
 ### Encoding
 
