@@ -26,7 +26,7 @@ The ApiAnalytics.com platform supports 3 different protocols: Socket.io, ZMQ and
 
 ### Socket.io
 
-Open a connection to `socket.apianalytics.com`, port `80`. Emit [API Log Format](format.md) object on the channel `message`.
+Open a connection to `ws://socket.apianalytics.com`. Emit [API Log Format](format.md) object on the channel `message`.
 
 ```js
 var io = require('socket.io-client');
@@ -47,8 +47,8 @@ socket.send(JSON.stringify(harObject));
 
 ### HTTP
 
-Send HTTP `POST` requests to `socket.apianalytics.com/`, port `6000`. The body must be a valid [API Log Format](format.md) object.
+Send HTTP `POST` requests to `http://socket.apianalytics.com/`. The body must be a valid [API Log Format](format.md) object.
 
-Alternatively, it's possible to send an array of API Log Format objects at `socket.apianalytics.com/batch`, port `6000`.
+Alternatively, it's possible to send an array of API Log Format objects.
 
 **Note:** The payload (body) per HTTP request must not exceed 1MB.
