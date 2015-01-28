@@ -318,7 +318,7 @@ entry.time == entry.timings.blocked + entry.timings.dns +
                         "headers": [
                             {
                                 "name": "Content-Length",
-                                "value": 11
+                                "value": "11"
                             },
                             {
                                 "name": "Mime-Type",
