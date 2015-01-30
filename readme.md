@@ -1,20 +1,20 @@
 # API Analytics
 
-API Analytics collects data in a new format called [**ALF (API Log Format)**](https://github.com/APIAnalytics/spec/blob/master/format.md). We support multiple input protocols for collecting ALF data. No matter what tech stack you run, as an API creator or consumer, it's possible to intregrate API analytics to gain a deeper understanding of your API layer.
+API Analytics collects data in a new format called [**ALF (API Log Format)**](https://github.com/APIAnalytics/spec/blob/master/format.md). We support multiple input protocols for collecting ALF data which our official clients are built on top of. No matter what tech stack you run, as an API creator or consumer, it's possible to intregrate API analytics to gain a deeper understanding of your API layer.
 
-## API Log Format
+### API Log Format
 
 - [Specification](https://github.com/APIAnalytics/spec/blob/master/format.md)
 - [Example JSON](https://github.com/APIAnalytics/spec/blob/master/format.md#full-example)
 
-## Official Clients
+### Official Clients
 
 - [Node.js Agent](https://github.com/APIAnalytics/node-agent)
   - *NodeJS middleware, compatible with HTTP, Express, Restify, etc ...*
 - [HARchiver](https://github.com/APIAnalytics/HARchiver)
   - *Universal lightweight proxy*
 
-## Collection APIs
+### Collection APIs
 
 - [Socket.io](https://github.com/APIAnalytics/spec/blob/master/api.md#socketio)
   - *Socket.io is the simplest, but isn't available on every platform and language.*
