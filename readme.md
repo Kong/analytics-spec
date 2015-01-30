@@ -1,6 +1,6 @@
 # API Analytics
 
-API Analytics collects data in a custom format called [**ALF (API Log Format)**](https://github.com/APIAnalytics/spec/blob/master/format.md). We support multiple input protocols for collecting ALF data which we used to build the official clients so no matter what tech stack you're running it is possible to intregrate API analytics and gain a deeper understanding of your API layer. 
+API Analytics collects data in a new format called [**ALF (API Log Format)**](https://github.com/APIAnalytics/spec/blob/master/format.md). We support multiple input protocols for collecting ALF data. No matter what tech stack you run, as an API creator or consumer, it's possible to intregrate API analytics to gain a deeper understanding of your API layer.
 
 ## API Log Format
 
