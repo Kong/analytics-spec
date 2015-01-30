@@ -1,3 +1,5 @@
+# Collection APIs
+
 We support three different protocols for sending data into API analytics.
 
 - Socket.io is the simplest, but isn't available on every platform and language.
